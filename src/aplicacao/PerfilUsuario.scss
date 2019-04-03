@@ -1,0 +1,48 @@
+.PerfilUsuario {
+  background: linear-gradient(to bottom, #c0aa9a, #5c4164);
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .loader {
+    font-size: 26px;
+  }
+  .PerfilUsuario-Info {
+    background: white;
+    box-shadow: 3px 3px 9px 0 rgba(50, 50, 50, 0.46);
+    padding: 10px;
+    width: 240px;
+
+    img.PerfilUsuario-avatar {
+      width: 160px;
+      border-radius: 50%;
+    }
+
+    .PerfilUsuario-Indicadores {
+      display: flex;
+      justify-content: space-between;
+      width: 190px;
+      margin: auto;
+
+      .PerfilUsuario-Seguidores {
+        display: flex;
+        flex-direction: column;
+        color: grey;
+        font-size: 13px;
+        & span{
+          font-size: 15px;
+        }
+      }
+      .PerfilUsuario-Seguindo {
+        display: flex;
+        flex-direction: column;
+        color: grey;
+        font-size: 13px;
+        & span{
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}

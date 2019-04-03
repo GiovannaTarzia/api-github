@@ -1,12 +1,20 @@
+import './index.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { BrowserRouter, Route } from "react-router-dom";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import Search from './aplicacao/Home';
+import PerfilUsuario from './aplicacao/PerfilUsuario';
+import RepositoriosPerfil from './aplicacao/RepositoriosPerfil'
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const routes = (
+    <BrowserRouter >
+        <Route exact path="/" component={Search}/>
+        <Route exact path="/user/:username" component={PerfilUsuario}/>
+
+        <Route path="/user/:username/repos" component={RepositoriosPerfil}/>
+    </BrowserRouter>
+);
+
+ReactDOM.render(routes, document.getElementById('root'));
