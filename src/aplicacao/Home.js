@@ -12,7 +12,6 @@ class Home extends Component {
         };
     }
 
-
     changeInput = (e) =>{
       this.setState({inputPesquisa: e.target.value})
     };
@@ -20,16 +19,18 @@ class Home extends Component {
   render() {
     return (
       <div className="Home">
-              <div className="Topo">GitHub</div>
-              <div className="Conteudo">
-                  <div className="CampoInput">
-                      <img   src={iconUser} className="ImgUser"/>
-                      <input placeholder="Username" className="InputPesquisa" onChange={(e) => this.changeInput(e)}/>
-                  </div>
-                  <Link to={`/user/${this.state.inputPesquisa}`}>
-                      <button className="BotaoPesquisar" onClick={() => this.setState({inputPesquisa:''})} >Pesquisar</button>
-                  </Link>
+          <div className="Topo">GitHub</div>
+          <div className="Conteudo">
+              <div className="CampoInput">
+                  <img   src={iconUser} className="ImgUser"/>
+                  <input placeholder="Username" className="InputPesquisa" onChange={(e) => this.changeInput(e)}/>
               </div>
+              <Link to={`/user/${this.state.inputPesquisa}`}>
+                  <button className="BotaoPesquisar" onClick={() => this.setState({inputPesquisa:''})} >
+                      Pesquisar
+                  </button>
+              </Link>
+          </div>
       </div>
     );
   }
