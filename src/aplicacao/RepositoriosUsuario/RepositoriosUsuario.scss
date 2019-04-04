@@ -6,12 +6,13 @@
   justify-content: center;
   cursor: default;
 
-  & a {
-    text-decoration: none !important;
+  .PerfilUsuario-VoltarPerfil {
+    transform: rotate(90deg);
+    width: 20px;
   }
 
-  .RepositoriosUsuario-VoltarPerfil {
-    text-align: start;
+  & a {
+    text-decoration: none !important;
   }
 
   .RepositoriosUsuario-Itens {

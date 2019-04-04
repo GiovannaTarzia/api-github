@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './RepositoriosUsuario.scss';
 import {Link} from "react-router-dom";
+import Icon from '../../seta_voltar.svg';
 
 class RepositoriosUsuario extends Component {
 
@@ -24,8 +25,8 @@ class RepositoriosUsuario extends Component {
 
                 <div className="RepositoriosUsuario-Itens">
                     <Link to={`/user/${this.props.match.params.username}`}>
-                        <div className="RepositoriosUsuario-VoltarPerfil">
-                            ⬅
+                        <div className="PerfilUsuario-VoltarPerfil">
+                            <img src={Icon} className={"PerfilUsuario-VoltarPerfil"}/>
                         </div>
                     </Link>
                     {this.state.repos.map((itemRepos, key) => {

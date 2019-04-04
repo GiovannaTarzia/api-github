@@ -16,12 +16,13 @@
     padding: 10px;
     width: 240px;
 
-    & a {
-      text-decoration: none !important;
+    .PerfilUsuario-VoltarPerfil {
+      transform: rotate(90deg);
+      width: 20px;
     }
 
-    .PerfilUsuario-VoltarPerfil {
-      text-align: start;
+    & a {
+      text-decoration: none !important;
     }
 
     img.PerfilUsuario-avatar {
@@ -59,7 +60,7 @@
     }
 
     p.PerfilUsuario-LinkRepositorio {
-      color: #b587b2;
+      color: #d441ca;
       font-style: italic;
     }
   }

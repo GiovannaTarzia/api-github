@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './PerfilUsuario.scss';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import Icon from '../../seta_voltar.svg'
 
 class PerfilUsuario extends Component {
 
@@ -32,7 +33,7 @@ class PerfilUsuario extends Component {
                 <div className="PerfilUsuario-Info">
                     <Link to={`/`}>
                         <div className="PerfilUsuario-VoltarPerfil">
-                            ⬅
+                            <img src={Icon} className={"PerfilUsuario-VoltarPerfil"}/>
                         </div>
                     </Link>
                     <img className="PerfilUsuario-avatar" src={user.avatar_url} alt={`${user.login} avatar`}/>
