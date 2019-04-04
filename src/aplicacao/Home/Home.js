@@ -16,6 +16,12 @@ class Home extends Component {
       this.setState({inputPesquisa: e.target.value})
     };
 
+    handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            this.props.history.push(`/user/${this.state.inputPesquisa}`)
+        }
+    };
+
   render() {
     return (
       <div className="Home">
@@ -27,7 +33,8 @@ class Home extends Component {
                          onKeyPress={this.handleKeyPress}/>
               </div>
               <Link to={`/user/${this.state.inputPesquisa}`}>
-                  <button className="BotaoPesquisar" onClick={() => this.setState({inputPesquisa:''})} >
+                  <button className="BotaoPesquisar" onClick={() => this.setState({inputPesquisa: ''})}
+                          onKeyPress={this.handleKeyPress}>
                       Pesquisar
                   </button>
               </Link>

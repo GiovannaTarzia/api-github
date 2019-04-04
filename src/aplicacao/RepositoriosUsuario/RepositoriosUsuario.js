@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './RepositoriosUsuario.scss';
+import {Link} from "react-router-dom";
 
 class RepositoriosUsuario extends Component {
 
@@ -20,7 +21,13 @@ class RepositoriosUsuario extends Component {
     render() {
         return (
             <div className="RepositoriosUsuario">
+
                 <div className="RepositoriosUsuario-Itens">
+                    <Link to={`/user/${this.props.match.params.username}`}>
+                        <div className="RepositoriosUsuario-VoltarPerfil">
+                            ⬅
+                        </div>
+                    </Link>
                     {this.state.repos.map((itemRepos, key) => {
                         return <div key={key} className="RepositoriosUsuario-Item">
                             <span className="RepositoriosUsuario-Item-Nome">{itemRepos.name}</span>

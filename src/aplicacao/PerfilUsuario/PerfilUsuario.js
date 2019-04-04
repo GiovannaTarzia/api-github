@@ -30,6 +30,11 @@ class PerfilUsuario extends Component {
         return (
             <div className="PerfilUsuario">
                 <div className="PerfilUsuario-Info">
+                    <Link to={`/`}>
+                        <div className="PerfilUsuario-VoltarPerfil">
+                            ⬅
+                        </div>
+                    </Link>
                     <img className="PerfilUsuario-avatar" src={user.avatar_url} alt={`${user.login} avatar`}/>
                     <h3 className="PerfilUsuario-Nome">{user.login}</h3>
                     <span className="PerfilUsuario-Localizacao">{user.location}</span>

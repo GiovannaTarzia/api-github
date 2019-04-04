@@ -1,8 +1,51 @@
 .RepositoriosUsuario {
-  background: linear-gradient(to bottom, #c0aa9a, #5c4164);
   height: 100vh;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: default;
+
+  & a {
+    text-decoration: none !important;
+  }
+
+  .RepositoriosUsuario-VoltarPerfil {
+    text-align: start;
+  }
+
+  .RepositoriosUsuario-Itens {
+    background: white;
+    padding: 10px;
+    width: 80%;
+    min-width: 150px;
+    height: 50%;
+    overflow: scroll;
+    min-height: 150px;
+
+    .RepositoriosUsuario-Item {
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: end;
+      border-bottom: 1px solid #b59fb4;
+
+      span.RepositoriosUsuario-Item-Nome {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #5c4164;
+      }
+
+      span.RepositoriosUsuario-Item-Linguagem {
+        color: grey;
+        font-size: 13px;
+      }
+    }
+
+    .RepositoriosUsuario-Item:nth-last-child(1) {
+      border-bottom: none;
+    }
+  }
 }
