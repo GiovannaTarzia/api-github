@@ -13,6 +13,7 @@
   .Topo {
     background: white;
     font-size: 20px;
+    min-width: 270px;
     width: 40%;
     max-width: 400px;
     height: 40px;
@@ -28,6 +29,7 @@
   .Conteudo{
     margin: 10px auto;
     width: 40%;
+    min-width: 270px;
     max-width: 400px;
     background: white;
     -webkit-box-shadow: 3px 3px 9px 0 rgba(50, 50, 50, 0.46);
