@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './PerfilUsuario.scss';
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 class PerfilUsuario extends Component {
 
@@ -12,30 +12,28 @@ class PerfilUsuario extends Component {
     componentDidMount() {
         fetch(`https://api.github.com/users/${this.props.match.params.username}`)
             .then(response => response.json())
-            .then(user => {this.setState({user: user});});
+            .then(user => {
+                this.setState({usuario: user});
+            });
     }
 
 
     render() {
-        // If the state doesn't have a user key, it means the AJAX didn't complete yet. Simply render a LOADING indicator.
-        if (!this.state.user) {
+        if (!this.state.usuario) {
             return (<div className="PerfilUsuario loader">CARREGANDO...</div>);
         }
 
-        // If we get to this part of `render`, then the user is loaded
-        const user = this.state.user;
+        const user = this.state.usuario;
 
-        // Gather up some number stats about the user, to be used in a map below
-        const stat = {name: 'Repositórios', url: `/user/${this.props.match.params.username}/repos`};
-
+        const stat = {name: 'Repositórios públicos', url: `/user/${this.props.match.params.username}/repos`};
 
         return (
             <div className="PerfilUsuario">
                 <div className="PerfilUsuario-Info">
                     <img className="PerfilUsuario-avatar" src={user.avatar_url} alt={`${user.login} avatar`}/>
-                    <h3 className="user-info__title">{user.login}</h3>
-                    <span className="user-info__bio">{user.location}</span>
-                    <p className="user-info__bio">{user.bio}</p>
+                    <h3 className="PerfilUsuario-Nome">{user.login}</h3>
+                    <span className="PerfilUsuario-Localizacao">{user.location}</span>
+                    <p className="PerfilUsuario-Biografia">{user.bio}</p>
 
                     <div className="PerfilUsuario-Indicadores">
                         <div className="PerfilUsuario-Seguidores">
@@ -47,7 +45,7 @@ class PerfilUsuario extends Component {
                     </div>
 
                     <Link to={stat.url}>
-                        <p className="user-info__stat-name">{stat.name}</p>
+                        <p className="PerfilUsuario-LinkRepositorio">{stat.name}</p>
                     </Link>
                 </div>
             </div>

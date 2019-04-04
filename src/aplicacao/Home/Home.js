@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './Home.scss';
 import iconUser from "./IconUser.svg";
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 class Home extends Component {
 
@@ -22,8 +22,9 @@ class Home extends Component {
           <div className="Topo">GitHub</div>
           <div className="Conteudo">
               <div className="CampoInput">
-                  <img   src={iconUser} className="ImgUser"/>
-                  <input placeholder="Username" className="InputPesquisa" onChange={(e) => this.changeInput(e)}/>
+                  <img src={iconUser} className="ImgUser" alt={"Nome do usuário"}/>
+                  <input placeholder="Nome do usuário" className="InputPesquisa" onChange={(e) => this.changeInput(e)}
+                         onKeyPress={this.handleKeyPress}/>
               </div>
               <Link to={`/user/${this.state.inputPesquisa}`}>
                   <button className="BotaoPesquisar" onClick={() => this.setState({inputPesquisa:''})} >
